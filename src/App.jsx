@@ -22,7 +22,7 @@ function App() {
       <form onSubmit={(e)=>{
         submitHandler(e)
       }} className='flex justify-between items-start gap-5 p-10 '>
-        <div className='flex w-1/2 flex-col gap-5 p-8 '>
+        <div className='flex w-full flex-col gap-5 p-8 '>
 
 
           <input className='font-medium px-5 py-2 border-2 rounded'
@@ -43,7 +43,7 @@ function App() {
         </div>
       </form>
 
-      <div className='p-10 lg:w-1/2'>
+      <div className='p-10 w-full'>
         <h1 className='text-xl font-bold pl-10'>Your Notes</h1>
         <div className='flex flex-wrap gap-1 mt-5 h-52 overflow-auto'>
           {notes.map((note, index)=>{
