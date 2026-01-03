@@ -41,7 +41,6 @@ function App() {
 
           <button className=' font-medium bg-white text-black h-15 rounded'>Add Note</button>
         </div>
-        <img className='h-120 w-1/2 ' src="src/assets/fi.png" alt="notes" />
       </form>
 
       <div className='p-10 lg:w-1/2'>
