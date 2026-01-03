@@ -43,7 +43,7 @@ function App() {
         </div>
       </form>
 
-      <div className='p-10 w-full'>
+      <div className='p-10 w-full bg-black'>
         <h1 className='text-xl font-bold pl-10'>Your Notes</h1>
         <div className='flex flex-wrap gap-1 mt-5 h-52 overflow-auto'>
           {notes.map((note, index)=>{
