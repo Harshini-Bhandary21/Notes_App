@@ -16,6 +16,12 @@ function App() {
     setcontent('')
   }
 
+  const deleteNote = (idx) => {
+    const newNotes = [...notes];
+    newNotes.splice(idx, 1);
+    setnotes(newNotes);
+  }
+
   return (
     <div className='h-screen bg-black text-white'>
       <h1 className=' text-2xl text-extrabold pt-10 pl-20'>Add Your Notes Here!</h1>
@@ -39,7 +45,7 @@ function App() {
           ></textarea>
 
 
-          <button className=' font-medium bg-white text-black h-15 rounded'>Add Note</button>
+          <button className=' font-medium bg-white text-black h-15 rounded active:bg-gray-300'>Add Note</button>
         </div>
       </form>
 
@@ -47,10 +53,15 @@ function App() {
         <h1 className='text-xl font-bold pl-10'>Your Notes</h1>
         <div className='flex flex-wrap gap-1 mt-5 h-52 overflow-auto'>
           {notes.map((note, index)=>{
-            return <div key={index} className='ml-10 rounded h-52 w-40 bg-white text-black'>
-                <h3 className='p-2 leading-tightfont-bold text-3xl text-black'>{note.title}</h3>
-                <p className='mt-1 p-2 leading-tight font-medium text-gray-500'>{note.content}</p>
+            return <div key={index} className='ml-10 flex flex-col justify-between rounded h-52 w-40 bg-cover bg-[url("https://static.vecteezy.com/system/resources/previews/037/152/677/non_2x/sticky-note-paper-background-free-png.png")] text-black'>
+              <div>
+                <h3 className='p-2 pt-4 leading-tightfont-bold text-3xl text-black'>{note.title}</h3>
+                <p className='mt-1 p-1 leading-tight font-medium text-gray-500'>{note.content}</p>
               </div>
+              <button onClick={() => {
+                deleteNote(index);
+              }} className='bg-red-500 cursor-pointer rounded text-white p-1 m-2 font-bold active:bg-rose-950'>Delete</button>
+            </div>
           })}
         </div>  
       </div>
